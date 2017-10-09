@@ -33,8 +33,7 @@ class ElasticClient<T> {
                         ElasticConfig.CONFIG.getProperty("config.elastic.protocol"))).build()
         RestHighLevelClient client = new RestHighLevelClient(restClient)
         try {
-            def name = t.getClass().getSimpleName().toLowerCase()
-            IndexRequest request = new IndexRequest(name, "doc")
+            IndexRequest request = new IndexRequest(t.getClass().getSimpleName().toLowerCase(), "doc")
             if (t instanceof Array || t instanceof List) {
                 objectMapper.configure(SerializationFeature.WRAP_ROOT_VALUE, true)
             } else {
