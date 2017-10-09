@@ -17,14 +17,13 @@ class ElasticClient<T> {
     private String host
     private String port
     private String protocol
-    private ObjectMapper objectMapper
+    private ObjectMapper objectMapper = new ObjectMapper()
 
     ElasticClient() {
 
     }
 
     def sendToElastic(T t) {
-        objectMapper = new ObjectMapper()
         IndexResponse response = null
         RestClient restClient = RestClient.builder(
                 new HttpHost(
