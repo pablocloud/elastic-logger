@@ -8,7 +8,6 @@ class ApiLog<RQ, RS> extends LogAbstract<ApiLog> {
 
     private RQ request
     private RS response
-    private Date date
 
     @Override
     def logToElastic() {
