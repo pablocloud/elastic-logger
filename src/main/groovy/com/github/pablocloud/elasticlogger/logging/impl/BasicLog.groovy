@@ -6,7 +6,6 @@ import com.github.pablocloud.elasticlogger.types.ElasticClient
 class BasicLog<T> extends LogAbstract<BasicLog> {
 
     private T log
-    private Date date
 
     @Override
     def logToElastic() {
